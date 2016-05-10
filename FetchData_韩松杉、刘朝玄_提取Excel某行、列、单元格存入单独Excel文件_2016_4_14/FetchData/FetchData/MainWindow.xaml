@@ -1,0 +1,78 @@
+﻿<Window x:Class="FetchData.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FetchData"
+        mc:Ignorable="d"
+        Title="提取不同Excel文件的内容到一个Excel文件中" Height="500" Width="600">
+    <Window.Resources>
+        <local:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
+        <local:BoolToOppositeBoolConverter x:Key="BoolToOpposite"/>
+    </Window.Resources>
+    <Canvas>
+        <TextBlock x:Name="text_file_path" Text="Excel文件目录" Height="16" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Canvas.Left="10" Canvas.Top="15" TextAlignment="Center"/>
+        <TextBox x:Name="box_file_path" Height="20" IsEnabled="{Binding ElementName=radio_file_all, Path=IsEnabled}" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" Width="405" Canvas.Left="96" Canvas.Top="13"/>
+        <Button x:Name="button_file_browse" Content="浏览" IsEnabled="{Binding ElementName=radio_file_all, Path=IsEnabled}" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="60" Canvas.Left="514" Canvas.Top="13" Click="button_file_browse_Click"/>
+
+        <TextBlock x:Name="text_file_mode" Text="打开目录下的：" Height="16" Canvas.Left="10" Canvas.Top="48"/>
+        <RadioButton x:Name="radio_file_all" GroupName="group_OpenFileMode" Content="所有文件" IsChecked="True" Height="16" Canvas.Left="100" Canvas.Top="49"/>
+        <RadioButton x:Name="radio_file_any" IsEnabled="{Binding ElementName=radio_file_all, Path=IsEnabled}" GroupName="group_OpenFileMode" Content="自定义日期：" Height="16" Canvas.Left="206" Canvas.Top="49" Width="91"/>
+        <TextBlock x:Name="text_start_date" Text="起始日期" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" Canvas.Left="302" Canvas.Top="48"/>
+        <TextBox x:Name="box_start_date" Text="20160127" Height="20" IsEnabled="{Binding ElementName=radio_file_any, Path=IsChecked}" Canvas.Left="356" TextWrapping="Wrap" Canvas.Top="46" Width="68"/>
+        <TextBlock x:Name="text_end_date" Text="结束日期" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" Canvas.Left="452" Canvas.Top="48"/>
+        <TextBox x:Name="box_end_date" Text="20160127" IsEnabled="{Binding ElementName=radio_file_any, Path=IsChecked}" Height="20" Canvas.Left="506" TextWrapping="Wrap" Canvas.Top="46" Width="68"/>
+
+        <TextBlock x:Name="text_temp_sheetName" Height="16" Text="源文件表名：" Canvas.Left="10" Canvas.Top="79"/>
+        <TextBox x:Name="box_temp_sheetName" Text="Sheet1" Height="22" Width="80" Canvas.Left="96" Canvas.Top="76"/>
+        <TextBlock x:Name="text_save_sheetName" Height="16" Text="存储表名：" Canvas.Left="200" Canvas.Top="79"/>
+        <TextBox x:Name="box_save_sheetName" Text="Sheet1" Height="22" Width="80" Canvas.Left="271" Canvas.Top="76"/>
+
+        <TextBlock x:Name="text_fetch_mode" Text="提取表中的：" Height="16" Canvas.Left="10" Canvas.Top="110"/>
+        <RadioButton x:Name="radio_row" GroupName="group_FetchMode" Content="某行" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="100" Canvas.Top="111" IsChecked="True"/>
+        <RadioButton x:Name="radio_col" IsEnabled="{Binding ElementName=radio_row, Path=IsEnabled}" GroupName="group_FetchMode" Content="某列" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="180" Canvas.Top="111"/>
+        <RadioButton x:Name="radio_single" IsEnabled="{Binding ElementName=radio_row, Path=IsEnabled}" GroupName="group_FetchMode" Content="某单元格" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="260" Canvas.Top="111"/>
+        <!--        
+        <RadioButton x:Name="radio_any" GroupName="group_FetchMode" Content="自定义范围" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="310" Canvas.Top="81" Width="80"/>
+-->
+
+        <TextBlock x:Name="text_row_rowNumber" Text="行号：" Visibility="{Binding ElementName=radio_row, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="110" Canvas.Top="139"/>
+        <TextBox x:Name="box_row_rowNumber" Height="20" Visibility="{Binding ElementName=radio_row, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" IsEnabled="{Binding ElementName=radio_row, Path=IsEnabled}" Width="40" Canvas.Left="150" Canvas.Top="137"/>
+        <TextBlock x:Name="text_row_startCol" Text="起始列：" Visibility="{Binding ElementName=radio_row, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="210" Canvas.Top="139"/>
+        <TextBox x:Name="box_row_startCol" Height="20" Visibility="{Binding ElementName=radio_row, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" IsEnabled="{Binding ElementName=radio_row, Path=IsEnabled}" Width="40" Canvas.Left="260" Canvas.Top="137"/>
+        <TextBlock x:Name="text_row_endCol" Text="终止列：" Visibility="{Binding ElementName=radio_row, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="310" Canvas.Top="139"/>
+        <TextBox x:Name="box_row_endCol" Height="20" Width="40" Visibility="{Binding ElementName=radio_row, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" IsEnabled="{Binding ElementName=radio_row, Path=IsEnabled}" Canvas.Left="360" Canvas.Top="137"/>
+
+        <TextBlock x:Name="text_col_colNumber" Text="列号：" Visibility="{Binding ElementName=radio_col, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="110" Canvas.Top="139"/>
+        <TextBox x:Name="box_col_colNumber" Height="20" Visibility="{Binding ElementName=radio_col, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" IsEnabled="{Binding ElementName=radio_row, Path=IsEnabled}" Width="40" Canvas.Left="150" Canvas.Top="137"/>
+        <TextBlock x:Name="text_col_startRow" Text="起始行：" Visibility="{Binding ElementName=radio_col, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="210" Canvas.Top="139"/>
+        <TextBox x:Name="box_col_startRow" Height="20" Visibility="{Binding ElementName=radio_col, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" IsEnabled="{Binding ElementName=radio_row, Path=IsEnabled}" Width="40" Canvas.Left="260" Canvas.Top="137"/>
+        <TextBlock x:Name="text_col_endRow" Text="终止行：" Visibility="{Binding ElementName=radio_col, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="310" Canvas.Top="139"/>
+        <TextBox x:Name="box_col_endRow" Height="20" Width="40" Visibility="{Binding ElementName=radio_col, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" IsEnabled="{Binding ElementName=radio_row, Path=IsEnabled}" Canvas.Left="360" Canvas.Top="137"/>
+
+        <TextBlock x:Name="text_single_rowNumber" Text="行号：" Visibility="{Binding ElementName=radio_single, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="160" Canvas.Top="139"/>
+        <TextBox x:Name="box_single_rowNumber" Height="20" Visibility="{Binding ElementName=radio_single, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" IsEnabled="{Binding ElementName=radio_row, Path=IsEnabled}" Width="40" Canvas.Left="200" Canvas.Top="137"/>
+        <TextBlock x:Name="text_single_colNumber" Text="列号：" Visibility="{Binding ElementName=radio_single, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="260" Canvas.Top="139"/>
+        <TextBox x:Name="box_single_colNumber" Height="20" Visibility="{Binding ElementName=radio_single, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" IsEnabled="{Binding ElementName=radio_row, Path=IsEnabled}" Width="40" Canvas.Left="300" Canvas.Top="137"/>
+        <!--
+        <TextBlock x:Name="text_any_startRow" Text="起始行：" Visibility="{Binding ElementName=radio_any, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="60" Canvas.Top="110"/>
+        <TextBox x:Name="box_any_startRow" Height="20" Visibility="{Binding ElementName=radio_any, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Width="40" Canvas.Left="110" Canvas.Top="108"/>
+        <TextBlock x:Name="text_any_endRow" Text="终止行：" Visibility="{Binding ElementName=radio_any, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="160" Canvas.Top="110"/>
+        <TextBox x:Name="box_any_endRow" Height="20" Visibility="{Binding ElementName=radio_any, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Width="40" Canvas.Left="210" Canvas.Top="108"/>
+        <TextBlock x:Name="text_any_startCol" Text="起始列" Visibility="{Binding ElementName=radio_any, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="260" Canvas.Top="110"/>
+        <TextBox x:Name="box_any_startCol" Height="20" Width="40" Visibility="{Binding ElementName=radio_any, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="310" Canvas.Top="108"/>
+        <TextBlock x:Name="text_any_endCol" Text="终止列" Visibility="{Binding ElementName=radio_any, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="360" Canvas.Top="110"/>
+        <TextBox x:Name="box_any_endCol" Height="20" Width="40" Visibility="{Binding ElementName=radio_any, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Canvas.Left="410" Canvas.Top="108"/>
+-->
+
+        <TextBlock x:Name="text_save_filename" Height="16" Canvas.Left="385" TextWrapping="Wrap" Text="保存文件名：" Canvas.Top="79"/>
+        <TextBox x:Name="box_save_filename" IsEnabled="{Binding ElementName=radio_file_all, Path=IsEnabled}" Height="22" Canvas.Left="463" TextWrapping="Wrap" Text="Result" Canvas.Top="76" Width="111"/>
+        <Button x:Name="button_start" IsEnabled="{Binding ElementName=radio_row, Path=IsEnabled}" Content="开始录入" Height="30" Canvas.Left="494" Canvas.Top="127" Width="80" RenderTransformOrigin="0.551,0.24" Click="button_start_Click"/>
+        <ListBox x:Name="list_workstate" Height="284" Canvas.Left="10" Canvas.Top="169" Width="567"/>
+
+
+
+
+
+    </Canvas>
+</Window>

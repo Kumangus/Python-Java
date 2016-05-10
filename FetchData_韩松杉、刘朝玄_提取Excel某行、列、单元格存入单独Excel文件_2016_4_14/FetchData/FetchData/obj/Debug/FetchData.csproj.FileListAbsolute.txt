@@ -1,0 +1,44 @@
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\bin\Debug\FetchData.exe.config
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\bin\Debug\FetchData.exe
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\bin\Debug\FetchData.pdb
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\obj\Debug\MainWindow.g.cs
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\obj\Debug\App.g.cs
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\obj\Debug\FetchData_MarkupCompile.cache
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\obj\Debug\FetchData_MarkupCompile.lref
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\obj\Debug\MainWindow.baml
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\obj\Debug\FetchData.g.resources
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\obj\Debug\FetchData.Properties.Resources.resources
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\obj\Debug\FetchData.csproj.GenerateResource.Cache
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\obj\Debug\FetchData.exe
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\obj\Debug\FetchData.pdb
+c:\users\45417\documents\visual studio 2015\Projects\FetchData\FetchData\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\bin\Debug\FetchData.exe.config
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\obj\Debug\FetchData.exe
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\obj\Debug\FetchData.pdb
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\obj\Debug\FetchData.csprojResolveAssemblyReference.cache
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\obj\Debug\MainWindow.g.cs
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\obj\Debug\App.g.cs
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\obj\Debug\FetchData_MarkupCompile.cache
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\obj\Debug\FetchData_MarkupCompile.lref
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\bin\Debug\FetchData.exe
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\bin\Debug\FetchData.pdb
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\obj\Debug\MainWindow.baml
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\obj\Debug\FetchData.g.resources
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\obj\Debug\FetchData.Properties.Resources.resources
+E:\c\Desktop\锅\2016-4-13_提取行、列、单元格\FetchData\FetchData\obj\Debug\FetchData.csproj.GenerateResource.Cache
+C:\Users\45417\Desktop\FetchData\FetchData\bin\Debug\FetchData.exe.config
+C:\Users\45417\Desktop\FetchData\FetchData\obj\Debug\FetchData.exe
+C:\Users\45417\Desktop\FetchData\FetchData\obj\Debug\FetchData.pdb
+C:\Users\45417\Desktop\FetchData\FetchData\bin\Debug\FetchData.exe
+C:\Users\45417\Desktop\FetchData\FetchData\bin\Debug\FetchData.pdb
+C:\Users\45417\Desktop\FetchData\FetchData\obj\Debug\FetchData.csprojResolveAssemblyReference.cache
+C:\Users\45417\Desktop\FetchData\FetchData\obj\Debug\MainWindow.g.cs
+C:\Users\45417\Desktop\FetchData\FetchData\obj\Debug\App.g.cs
+C:\Users\45417\Desktop\FetchData\FetchData\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\45417\Desktop\FetchData\FetchData\obj\Debug\FetchData_MarkupCompile.cache
+C:\Users\45417\Desktop\FetchData\FetchData\obj\Debug\FetchData_MarkupCompile.lref
+C:\Users\45417\Desktop\FetchData\FetchData\obj\Debug\MainWindow.baml
+C:\Users\45417\Desktop\FetchData\FetchData\obj\Debug\FetchData.g.resources
+C:\Users\45417\Desktop\FetchData\FetchData\obj\Debug\FetchData.Properties.Resources.resources
+C:\Users\45417\Desktop\FetchData\FetchData\obj\Debug\FetchData.csproj.GenerateResource.Cache
